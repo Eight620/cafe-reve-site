@@ -1,0 +1,214 @@
+/* --- 基本設定 --- */
+:root {
+    --main-color: #A5B2A0;
+    --bg-color: #F5F5F5;
+    --text-color: #333333;
+    --white-color: #FFFFFF;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 60px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/* --- メインビジュアル --- */
+.main-visual {
+    height: 100vh;
+    width: 100%;
+    background-image: url('product/image/1-header.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.main-visual__content {
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-visual__title {
+    font-size: 5rem;
+    margin: 0;
+}
+
+.main-visual__subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* --- コンセプト --- */
+.concept__container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.concept__image, .concept__text {
+    flex: 1;
+}
+
+/* --- メニュー --- */
+.menu__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.menu__item {
+    text-align: center;
+}
+
+.menu__item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.menu__item h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+/* --- ギャラリー --- */
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery__item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* --- アクセス --- */
+.access__container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.access__map, .access__info {
+    flex: 1;
+}
+
+/* --- 営業時間 --- */
+.open-hours__table {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.open-hours__table th, .open-hours__table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+
+.open-hours__table th {
+    background-color: #f9f9f9;
+    width: 30%;
+}
+
+/* --- フッター --- */
+.footer {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- アニメーション --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- レスポンシブデザイン --- */
+
+/* タブレット (768px - 1023px) */
+@media (max-width: 1023px) {
+    .section {
+        padding: 60px 0;
+    }
+    .section__title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .main-visual__title {
+        font-size: 4rem;
+    }
+    .main-visual__subtitle {
+        font-size: 1.2rem;
+    }
+
+    .concept__container, .access__container {
+        flex-direction: column;
+    }
+}
+
+/* スマートフォン (767px以下) */
+@media (max-width: 767px) {
+    .section__inner {
+        padding: 0 20px;
+    }
+    .main-visual__title {
+        font-size: 2.5rem;
+    }
+    .main-visual__subtitle {
+        font-size: 1rem;
+    }
+    .menu__grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .open-hours__table th, .open-hours__table td {
+        padding: 10px;
+    }
+}
